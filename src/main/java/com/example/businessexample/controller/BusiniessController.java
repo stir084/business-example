@@ -6,11 +6,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
 public class BusiniessController {
+
+    // 1. DTO Mapping Tutorial
 
     /* Post Man 요청 값
     {
@@ -37,6 +41,18 @@ public class BusiniessController {
         // 분류할 때 좋음
 
         return new ResponseEntity<>(testDto, HttpStatus.OK);
+    }
+
+    // 2. HashMap Practice
+
+    @PostMapping("/test2")
+    public void test2() {
+        String[] arr1 = {"aaa", "bbb", "ccc", "aaa", "aaa", "ccc"};
+
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        for(String a : arr1) map.put(a, map.getOrDefault(a, 0) + 1);
+        System.out.println(map);
+        // [aaa=3, ccc=2, bbb=1]
     }
 }
 
