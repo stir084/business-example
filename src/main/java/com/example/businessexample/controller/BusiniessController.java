@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class BusiniessController {
 
-    /*
+    /* Post Man 요청 값
     {
             "id" : 1,
             "rouletteCode" : "hello",
